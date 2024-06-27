@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,11 +24,11 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // route admin(Backend)
-Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
-    Route::get('/', function(){
-        return view('admin.index');
-    });
-});
+// Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
+//     Route::get('/', function(){
+//         return view('admin.index');
+//     });
+// });
 
 // Route::get('tes', function () {
 //     return view('layouts.front');
@@ -42,3 +43,17 @@ Route::get('checkout', [FrontController::class, 'checkout']);
 Route::get('track', [FrontController::class, 'track']);
 Route::get('shop_details', [FrontController::class, 'shop_details']);
 Route::get('about', [FrontController::class, 'about']);
+
+
+use App\Http\Middleware\IsAdmin;
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', IsAdmin::class]], function () {
+    Route::get('/', function () {
+        return view('admin.index');
+    });
+    // untuk Route Backend Lainnya
+    Route::resource('user', \App\Http\Controllers\UsersController::class);
+});
+
+Route::group(['prefix' => 'admin'], function(){
+    Route::resource('users', UsersController::class);
+});
