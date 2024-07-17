@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Validation\Validator;
 use Illuminate\Support\Facades\Hash;
 
 class UsersController extends Controller
@@ -16,6 +15,7 @@ class UsersController extends Controller
     public function index()
     {
         $users = User::all();
+        
         $title = 'Delete User!';
         $text = "Are you sure you want to delete?";
         confirmDelete($title, $text);
@@ -42,13 +42,13 @@ class UsersController extends Controller
             'password' => 'required|min:8',
         ]);
 
-        $user = new User();
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = bcrypt ($request->password);
-        $user->isAdmin = $request->isAdmin;
+        $users = new User();
+        $users->name = $request->name;
+        $users->email = $request->email;
+        $users->password = bcrypt ($request->password);
+        $users->isAdmin = $request->isAdmin;
 
-        $user->save();
+        $users->save();
         Alert::success('Success', 'Data Berhasil di simpan')->autoClose(1000);
         return redirect()->route('user.index');
     }
@@ -80,17 +80,17 @@ class UsersController extends Controller
             'email' => 'required|email|unique:users',
             'password' => 'required',
             'isAdmin' => 'required|boolean',
-            
+
         ]);
 
 
-        $user = User::findOrFail($id);
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = $request->password;
-        $user->isAdmin = $request->isAdmin;
+        $users = User::findOrFail($id);
+        $users->name = $request->name;
+        $users->email = $request->email;
+        $users->password = $request->password;
+        $users->isAdmin = $request->isAdmin;
 
-        $user->save();
+        $users->save();
         Alert::success('Success', 'Data Berhasil di edit')->autoClose(1000);
         return redirect()->route('user.index');
     }

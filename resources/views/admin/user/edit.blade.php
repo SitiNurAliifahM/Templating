@@ -51,9 +51,9 @@
                     </select>
                 </div>
                 <div class="col-md-12">
-                    <div class="d-md-flex d-grid align-items-center gap-3">
-                        <button type="submit" class="btn btn-grd-primary px-4">Submit</button>
-                        <a href="{{route('user.index')}}" class="btn btn-grd-primary px-4">Kembali</a>
+                    <div class="d-md-flex d-grid align-items-center gap-3 justify-content-end">
+                        <button type="submit" class="btn btn-inverse-dark px-4">Submit</button>
+                        <a href="{{route('user.index')}}" class="btn btn-inverse-dark px-4">Kembali</a>
                     </div>
                 </div>
             </form>

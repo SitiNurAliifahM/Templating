@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en" data-bs-theme="blue-theme">
+<html lang="en" data-bs-theme="">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Maxton | Bootstrap 5 Admin Dashboard Template</title>
+  <title>Register</title>
   <!--favicon-->
 	<link rel="icon" href="assets/images/favicon-32x32.png" type="image/png">
   <!-- loader-->
@@ -51,11 +51,11 @@
         <div class="col-12 col-xl-5 col-xxl-4 auth-cover-right align-items-center justify-content-center">
           <div class="card rounded-0 m-3 border-0 shadow-none bg-none">
             <div class="card-body p-sm-5">
-              <img src="assets/images/logo1.png" class="mb-4" width="145" alt="">
+              <img src="#" class="mb-4" width="145" alt="">
               <h4 class="fw-bold">Get Started Now</h4>
               <p class="mb-0">Enter your credentials to create your account</p>
 
-              <div class="row g-3 my-4">
+              {{-- <div class="row g-3 my-4">
                 <div class="col-12 col-lg-6">
                   <button class="btn btn-filter py-2 font-text1 fw-bold d-flex align-items-center justify-content-center w-100"><img src="assets/images/apps/05.png" width="20" class="me-2" alt="">Google</button>
                 </div>
@@ -68,7 +68,7 @@
                 <div class="line"></div>
                 <p class="mb-0 fw-bold">OR</p>
                 <div class="line"></div>
-              </div>
+              </div> --}}
 
               <div class="form-body mt-4">
                 <form class="row g-3" method="post" action="{{route('register')}}">
@@ -122,7 +122,7 @@
                   </div>
                   <div class="col-12">
                     <div class="d-grid">
-                      <button type="submit" class="btn btn-grd-danger">Register</button>
+                      <button type="submit" class="btn btn-primary">Register</button>
                     </div>
                   </div>
                   <div class="col-12">

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
@@ -38,11 +39,20 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/', [FrontController::class, 'index']);
 Route::get('contact', [FrontController::class, 'contact']);
 Route::get('shop', [FrontController::class, 'shop']);
-Route::get('cart', [FrontController::class, 'cart']);
+Route::post('/cart/add/{id}', [CartController::class, 'add'])->name('cart.add');
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::post('/cart/update/{id}', [CartController::class, 'update'])->name('cart.update');
+Route::delete('/cart/delete/{id}', [CartController::class, 'delete'])->name('cart.delete');
+Route::delete('/cart/clear', [CartController::class, 'clear'])->name('cart.clear');
 Route::get('checkout', [FrontController::class, 'checkout']);
 Route::get('track', [FrontController::class, 'track']);
-Route::get('shop_details', [FrontController::class, 'shop_details']);
+Route::get('shop_details/{id}', [FrontController::class, 'shop_details']);
 Route::get('about', [FrontController::class, 'about']);
+
+
+
+
+
 
 
 use App\Http\Middleware\IsAdmin;
@@ -52,6 +62,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', IsAdmin::class]], fu
     });
     // untuk Route Backend Lainnya
     Route::resource('user', \App\Http\Controllers\UsersController::class);
+    Route::resource('kategori', \App\Http\Controllers\KategoriController::class);
+    Route::resource('product', \App\Http\Controllers\ProductController::class);
+
 });
 
 Route::group(['prefix' => 'admin'], function(){

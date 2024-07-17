@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
 {
     public function index()
     {
-        return view('index');
+        $product = Product::take(4)->get();
+        return view('index', compact('product'));
     }
 
     public function contact()
@@ -18,7 +20,8 @@ class FrontController extends Controller
 
     public function shop()
     {
-        return view('shop');
+        $product = Product::all();
+        return view('shop', compact('product'));
     }
 
     public function cart()
@@ -35,10 +38,11 @@ class FrontController extends Controller
     {
         return view('track');
     }
-    
-    public function shop_details()
+
+    public function shop_details($id)
     {
-        return view('shop_details');
+        $detail = Product::findOrFail($id);
+        return view('shop_details', compact('detail'));
     }
 
     public function about()

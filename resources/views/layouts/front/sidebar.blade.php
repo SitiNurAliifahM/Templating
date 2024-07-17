@@ -1,4 +1,4 @@
-<div class="tpsideinfo">
+{{-- <div class="tpsideinfo">
          <button class="tpsideinfo__close">Close<i class="fal fa-times ml-10"></i></button>
          <div class="tpsideinfo__search text-center pt-35">
             <span class="tpsideinfo__search-title mb-20">What Are You Looking For?</span>
@@ -33,11 +33,11 @@
                </div>
              </div>
          </div>
-         <div class="tpsideinfo__account-link">							
+         <div class="tpsideinfo__account-link">
             <a href="sign-in.html"><i class="fal fa-user"></i> Login / Register</a>
          </div>
          <div class="tpsideinfo__wishlist-link">
             <a href="wishlist.html" target="_parent"><i class="fal fa-heart"></i> Wishlist</a>
          </div>
-      </div> 
-      <div class="body-overlay"></div>
+      </div>
+      <div class="body-overlay"></div> --}}

@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en" data-bs-theme="blue-theme">
+<html lang="en" data-bs-theme="light-theme">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Maxton | Bootstrap 5 Admin Dashboard Template</title>
+  <title>Admin Digital Dimension</title>
   <!--favicon-->
   <link rel="icon" href="{{asset('assets/images/favicon-32x32.png')}}" type="image/png">
   <!-- loader-->
@@ -28,7 +28,7 @@
   <link href="{{asset('sass/semi-dark.css')}}" rel="stylesheet">
   <link href="{{asset('sass/bordered-theme.css')}}" rel="stylesheet">
   <link href="{{asset('sass/responsive.css')}}" rel="stylesheet">
-  
+
   @yield('styles')
 
 </head>
@@ -57,9 +57,9 @@
   <!--end overlay-->
 
    <!--start footer-->
-   <footer class="page-footer">
+   {{-- <footer class="page-footer">
     <p class="mb-0">Copyright © 2024. All right reserved.</p>
-  </footer>
+  </footer> --}}
   <!--end footer-->
 
   <!--start cart-->
@@ -68,10 +68,10 @@
 
 
   <!--start switcher-->
-  <button class="btn btn-grd btn-grd-primary position-fixed bottom-0 end-0 m-3 d-flex align-items-center gap-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop">
+  {{-- <button class="btn btn-grd btn-grd-primary position-fixed bottom-0 end-0 m-3 d-flex align-items-center gap-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop">
     <i class="material-icons-outlined">tune</i>Customize
   </button>
-  
+
   <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="staticBackdrop">
     <div class="offcanvas-header border-bottom h-70">
       <div class="">
@@ -126,7 +126,7 @@
 
       </div>
     </div>
-  </div>
+  </div> --}}
   <!--start switcher-->
 
   <!--bootstrap js-->

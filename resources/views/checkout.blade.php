@@ -2,13 +2,13 @@
 @section('content')
 
 <!-- breadcrumb-area -->
-      <section class="breadcrumb__area pt-60 pb-60 tp-breadcrumb__bg" data-background="front/assets/img/banner/breadcrumb-01.jpg">
+      <section class="breadcrumb__area pt-60 pb-60 tp-breadcrumb__bg" data-background="#">
          <div class="container">
             <div class="row align-items-center">
                <div class="col-xl-7 col-lg-12 col-md-12 col-12">
                   <div class="tp-breadcrumb">
                      <div class="tp-breadcrumb__link mb-10">
-                        <span class="breadcrumb-item-active"><a href="index.html">Home</a></span>
+                        <span class="breadcrumb-item-active"><a href="{{url('/')}}">Home</a></span>
                         <span>Checkout</span>
                      </div>
                      <h2 class="tp-breadcrumb__title">Checkout Page</h2>
@@ -18,7 +18,7 @@
          </div>
       </section>
       <!-- breadcrumb-area-end -->
-          
+
       <!-- coupon-area start -->
       <section class="coupon-area pt-80 pb-30 wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">
          <div class="container">
